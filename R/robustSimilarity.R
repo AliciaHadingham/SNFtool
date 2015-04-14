@@ -1,5 +1,7 @@
 #' Quantize values
 #' 
+#' Replaces values by their quantile number.
+#' 
 #' @param x numeric vector to quantize
 #' @param quantiles number of quantiles to use
 #' 
@@ -20,7 +22,7 @@ quantize <- function(x, quantiles=20){
 
 #' Create a similarity matrix, robustly
 #' 
-#' This function uses quantization to calculate useful similarity matricies, even with poorly behaved data
+#' This function uses quantization to calculate useful similarity matricies, even with poorly behaved data.
 #' 
 #' @param x a numeric data frame, array or matrix. Rows are samples, columns are attributes
 #' 
