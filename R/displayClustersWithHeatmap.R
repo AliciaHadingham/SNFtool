@@ -1,7 +1,8 @@
 ## Arguments:
 ## W: Similarity matrix
 ## group: a numeric vector containing the groups information for each sample in W such as the result of the spectralClustering function. The order should correspond to the sample order in W.
-## ColSideColors:  (optional) character vector of length ncol(x) containing the color names for a horizontal side bar that may be used to annotate the columns of x, used by the heatmap function,
+## ColSideColors:  (optional) character vector of length ncol(W) containing the color names for a horizontal side bar that may be used to annotate the columns of x, used by the heatmap function,
+## RowSideColors:  (optional) character vector of length nrow(W) containing the color names for a vertical side bar that may be used to annotate the rows of x, used by the heatmap function,
 ## OR a character matrix with number of rows matching number of rows in x.  Each column is plotted as a row similar to heatmap()'s ColSideColors by the heatmap.plus function.
 ## ... other paramater that can be pass on to the heatmap (if ColSideColor is a NULL or a vector) or  heatmap.plus function (if ColSideColors is matrix)
 
@@ -14,7 +15,7 @@
 ## Plots the similarity matrix using the heatmap function. Samples are ordered by the clusters provided by the argument groups with sample information displayed with a color bar if the ColSideColors argument is informed.
 ## Autors:
 
-displayClustersWithHeatmap <- function (W, group,ColSideColors=NULL,...) {
+displayClustersWithHeatmap <- function (W, group,ColSideColors=NULL,RowSideColors = NULL,...) {
   normalize <- function(X) X/rowSums(X)
   ind = sort(as.vector(group), index.return = TRUE)
   ind = ind$ix
@@ -27,10 +28,10 @@ displayClustersWithHeatmap <- function (W, group,ColSideColors=NULL,...) {
   }
   else{
     if(is.vector(ColSideColors)){
-      heatmap(W[ind, ind],scale="none",Rowv=NA,Colv=NA,ColSideColors=ColSideColors[ind],...)
+      heatmap(W[ind, ind],scale="none",Rowv=NA,Colv=NA,ColSideColors=ColSideColors[ind],RowSideColors=RowSideColors[ind],...)
     }
     else{
-      heatmap.plus(W[ind, ind],scale="none",Rowv=NA,Colv=NA,ColSideColors=ColSideColors[ind,],...)
+      heatmap.plus(W[ind, ind],scale="none",Rowv=NA,Colv=NA,ColSideColors=ColSideColors[ind,],RowSideColors=RowSideColors[ind,],...)
     }
   }
 }
