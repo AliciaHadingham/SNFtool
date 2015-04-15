@@ -7,7 +7,7 @@ Similarity Network Fusion
 Similarity Network Fusion takes multiple views of a network and fuses them together to construct an overall status matrix. The input to our algorithm can be feature vectors, pairwise distances, or pairwise similarities. The learned status matrix can then be used for retrieval, clustering, and classification.
 }
 \usage{
-SNF(Wall, K, t)
+SNF(Wall, K, t, layer_bias = rep.int(1,length(Wall)), parallel=FALSE, auto_stop=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
