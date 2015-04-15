@@ -4,9 +4,9 @@ SNF <- function(Wall,K=20,t=20,layer_bias = rep.int(1, length(Wall)),parallel=FA
     # Wall : List of affinity matrices
     # K : number of neighbors
     # t : number of iterations for fusion
-    # layer_bias : numerical vector of length length(Wall) containing the weights for each layer
-    # parallel : should the algorithm attempt to run in parallel? A parallel backend needs to be set up first?
-    # auto_stop : should the algorithm stop early if it believes it has converged?
+    # layer_bias : Numerical vector of length length(Wall) containing the relative weights for each layer.
+    # parallel : Should the algorithm attempt to run in parallel? A parallel backend needs to be set up first.
+    # auto_stop : Should the algorithm stop early if it believes it has converged?
     
     ###The output is a unified similarity graph. It contains both complementary information and common structures from all individual network. 
     ###You can do various applications on this graph, such as clustering(subtyping), classification, prediction.

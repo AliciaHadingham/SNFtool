@@ -20,6 +20,15 @@ Number of neighbors in K-nearest neighbors part of the algorithm.
   \item{t}{
 Number of iterations for the diffusion process.
 }
+  \item{layer_bias}{
+Numerical vector of length length(Wall) containing the relative weights for each layer.
+}
+  \item{parallel}{
+Should the algorithm attempt to run in parallel? A parallel backend needs to be set up first.
+}
+  \item{auto_stop}{
+Should the algorithm stop early if it believes it has converged?
+}
 }
 \value{
 W is the overall status matrix derived
