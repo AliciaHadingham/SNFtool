@@ -33,7 +33,7 @@ quantize <- function(x, quantiles=20){
 #' robustSimilarity(as.matrix(mtcars))
 robustSimilarity <- function(x){
   quantiles <- min(nrow(x), 20)
-  distances <- as.matrix(dist(t(apply(x,2,quantize,quantiles=quantiles))))
+  distances <- as.matrix(dist(apply(x,2,quantize,quantiles=quantiles)))
   similarities <- exp(-((distances/mean(distances))^2))
   return(similarities)
 }
