@@ -56,8 +56,8 @@ SNF <- function(Wall,K=20,t=20,layer_bias = rep.int(1, length(Wall)),parallel=FA
       means <- base::rowMeans(wallarray, dims=2)
       dev <- mean(abs(wallarray-array(means,dim=dim(wallarray))) / mean(means))
       devs <- c(devs,dev)
-      d_devs <- (devs-lag(devs))/lag(devs)
-      d2_devs <- (d_devs-lag(d_devs))/lag(d_devs)
+      d_devs <- (devs-lag(devs))
+      d2_devs <- (d_devs-lag(d_devs))
       if(!is.na(d2_devs[length(d2_devs)]) & 
            abs(d_devs[length(d_devs)])<0.01 & 
            abs(d2_devs[length(d2_devs)])<0.01){
