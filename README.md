@@ -65,3 +65,10 @@ displayClustersWithHeatmap(W, spectralClustering(W, K = 3))
 ```
 
 ![](README-unnamed-chunk-7-1.png)
+
+More details
+============
+
+-   `vignette('Advanced_Usage_Examples', package = 'SNFtool')`
+-   <http://compbio.cs.toronto.edu/SNF/SNF/Software.html>
+-   <http://www.nature.com/nmeth/journal/v11/n3/full/nmeth.2810.html>

@@ -71,4 +71,11 @@ W = SNF(list(W1,W2), 20, 20)
 displayClustersWithHeatmap(W, spectralClustering(W, K = 3))
 ```
 
+More details
+============
+
+* `vignette('Advanced_Usage_Examples', package = 'SNFtool')`
+* http://compbio.cs.toronto.edu/SNF/SNF/Software.html
+* http://www.nature.com/nmeth/journal/v11/n3/full/nmeth.2810.html
+
 
