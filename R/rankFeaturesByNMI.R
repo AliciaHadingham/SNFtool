@@ -20,10 +20,17 @@
 #' 
 #' Ranks each features by NMI based on their clustering assingments
 #' 
+#' NMI is calculated based on the clustering assignments using spectral clustering
+#' The number of clusters is set based on the estimateNumberOfClustersGivenGraph on the target matrix using default parameters.
 #' 
 #' @param data List containing all the data types.
 #' @param W Target Matrix for which the NMI is calculated against.
-#' @return List containing the NMI and rank based on NMI for each feature.
+#' @return A list that contains the NMI score for each feature and their ranks from highest to lowest
+#'   output[[1]] is the NMI score
+#'   output[[1]][[1]] is the NMI score of first data type
+#'   output[[1]][[1]][1] is the NMI score of the first feature of the first data type
+#'   similarly for output[[2]]... except it is the rank instead of the score
+#'   
 #' @author Dr. Anna Goldenberg, Bo Wang, Aziz Mezlini, Feyyaz Demir
 #' @examples
 #' 
